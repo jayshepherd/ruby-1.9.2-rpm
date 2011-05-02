@@ -1,5 +1,5 @@
 %define rubyver         1.9.2
-%define rubyminorver    p180
+%define rubyminorver    p0
 
 %{!?ruby_vendorlib:     %global ruby_vendorlib  %{_prefix}/lib/ruby}
 %{!?ruby_vendorarch:    %global ruby_vendorarch %{_libdir}/ruby}
@@ -67,10 +67,13 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-, root, root)
 %{_bindir}
 %{_includedir}
-%{_prefix}/share/
+%{_prefix}/*
 %{_libdir}
 
 %changelog
+* Mon May 2 2011 Jay Shepherd <jay@sprucecreeksoftware.com> - 1.9.2-p0
+- Updated for ruby version 1.9.2-p0
+
 * Tue Mar 7 2011 Robert Duncan <robert@robduncan.co.uk> - 1.9.2-p180-1
 - Update prerequisites to include make
 - Update ruby version to 1.9.2-p180
