@@ -8,13 +8,16 @@ N.B. The following instructions assume installation on a 32-bit platform. For 64
 
 #### RHEL/CentOS 5
 
+    # Make sure you have dependencies
+    yum install -y readline-devel ncurses-devel gdbm-devel glibc-devel tcl-devel gcc openssl-devel db4-devel byacc
+
     yum install -y rpm-build
     cd /usr/src/redhat/SOURCES
-    wget http://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.2-p180.tar.gz
+    wget http://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.2-p0.tar.gz
     cd /usr/src/redhat/SPECS
-    curl https://github.com/robduncan/ruby-1.9.2-rpm/raw/master/ruby19.spec > ruby19.spec
+    curl https://github.com/jayshepherd/ruby-1.9.2-rpm/raw/master/ruby19.spec > ruby19.spec
     rpmbuild -bb ruby19.spec
-    rpm -Uvh ../RPMS/i386/ruby-1.9.2p180-1.ruby-1.9.2p180-1.i386.rpm
+    rpm -Uvh ../RPMS/x86_64/ruby-1.9.2p180-1.ruby-1.9.2p0-1.x86_64.rpm
     
 
 **PROFIT!**
